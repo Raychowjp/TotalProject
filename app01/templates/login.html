@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-3.4.1/css/bootstrap.min.css' %}">
+    <style>
+        .login-box {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #dddddd;
+            margin-top: 220px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px
+        }
+
+        .login-box h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <h2>用户登录</h2>
+    <form method="post" action="/login/" novalidate>
+        {% csrf_token %}
+        <div class="form-group">
+            <label>用户名</label>
+            {{ form.username }}
+            <span style="color: red;">{{ form.username.errors.0 }}</span>
+        </div>
+        <div class="form-group">
+            <label>密码</label>
+            {{ form.password }}
+            <span style="color: red;">{{ form.password.errors.0 }}</span>
+        </div>
+        <button type="submit" class="btn btn-primary">提 交</button>
+        <span style="color: red;">{{ error }}</span>
+    </form>
+</div>
+
+</body>
+</html>
