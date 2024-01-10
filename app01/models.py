@@ -6,3 +6,7 @@ class UserInfo(models.Model):
     password = models.CharField(max_length=64)
     age = models.IntegerField()
 
+
+class Department(models.Model):
+    title = models.CharField(max_length=32)
+    count = models.IntegerField()

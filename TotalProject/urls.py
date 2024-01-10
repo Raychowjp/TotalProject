@@ -21,4 +21,8 @@ from app01 import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("login/", views.login),
+    path("depart/list/", views.depart_list),
+    path("add/depart/", views.add_depart),
+    path("delete/depart/", views.delete_depart),
+    path("edit/depart/", views.edit_depart),
 ]
